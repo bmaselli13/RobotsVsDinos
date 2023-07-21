@@ -86,7 +86,7 @@ namespace RobotvsDinos
                 robots.AttackDino(dinos);
 
                 //Display Robot name attacking Dino name
-                Console.WriteLine($"{robots.Name} hits {dinos.Name} for {robots.weapons.AttackPower}\n");
+                Console.WriteLine($"{robots.Name} hits {dinos.Name} with {weapons.Name} for {robots.weapons.AttackPower}\n");
 
                 //Reduce Dino Health
 

@@ -6,22 +6,15 @@ namespace RobotvsDinos
 		
 		//variables
 		public string Name;
-		public int AttackPower;
+		public int WeaponPower;
 
 		//Constructor
 		public Weapons()
 		{
 			this.Name = "Laser Beam";
-			this.AttackPower = 15;
+			this.WeaponPower = 25;
 
-        }
-		//CAN DO
-		public void attackDino()
-		{
-			int damageDealt = AttackPower;
-			
-		}
-			
+        }		
 			
 
 		

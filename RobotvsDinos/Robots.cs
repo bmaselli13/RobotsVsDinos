@@ -21,11 +21,13 @@ namespace RobotvsDinos
         public void AttackDino(Dinos dinos)
         {
             //attack Dino
-            int damageDealt = (weapons.AttackPower);
+            int damageDealt = this.weapons.WeaponPower;
 
             //Reduce Dino Health
-            dinos.Health = damageDealt;
-            if (dinos.Health < 0)
+            dinos.Health -= damageDealt;
+
+            //Check if health is less than or equal to zero
+            if (dinos.Health <= 0)
             {
                 dinos.Health = 0;
             }

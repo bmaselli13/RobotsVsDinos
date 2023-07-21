@@ -62,39 +62,29 @@ namespace RobotvsDinos
             //Battle to conclude once either the Robot or the Dinosaur has its
             //health points reduced to zero.
 
-
-
-            //int dinoStrike = dinos.AttackRobot(dinos.AttackPower);
-            //int botStrike = robots.AttackDino(Weapons weapons);
-
-
-            while (dinos.Health > 0 && robots.Health > 0)
+            while (dinos.Health > 0 && robots.Health > 0) 
             {
                 //Dino Attacks
                 dinos.AttackRobot(robots);
 
                 //Display Dino name attacking Robot name
-                Console.WriteLine($"{dinos.Name} hits {robots.Name} for {dinos.AttackPower}\n");
+                Console.WriteLine($"{dinos.Name} hits {robots.Name} for {dinos.AttackPower} damage\n");
+                Console.WriteLine($"{robots.Name} health is now at {robots.Health} points\n\n");
 
-                //Reduce Robot Health
-                //if ()
-                //{
+                if (robots.Health > 0)
+                {
+                    //Robot Attacks
+                    robots.AttackDino(dinos);
 
-                //}
+                    //Display Robot name attacking Dino name
+                    Console.WriteLine($"{robots.Name} hits {dinos.Name} with {weapons.Name} for {weapons.WeaponPower} damage\n");
+                    Console.WriteLine($"{dinos.Name} health is now at {dinos.Health} points\n\n");
+                }              
 
-                //Robot Attacks
-                robots.AttackDino(dinos);
+            }            
 
-                //Display Robot name attacking Dino name
-                Console.WriteLine($"{robots.Name} hits {dinos.Name} with {weapons.Name} for {robots.weapons.AttackPower}\n");
+            DisplayWinner();
 
-                //Reduce Dino Health
-
-                DisplayWinner();
-
-            }
-
-             
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace RobotvsDinos
 {
-	public class Weapons
+	public class Weapon
 	{
 		
 		//variables
@@ -9,7 +9,7 @@ namespace RobotvsDinos
 		public int WeaponPower;
 
 		//Constructor
-		public Weapons()
+		public Weapon()
 		{
 			this.Name = "Laser Beam";
 			this.WeaponPower = 25;

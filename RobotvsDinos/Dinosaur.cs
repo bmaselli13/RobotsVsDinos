@@ -1,7 +1,7 @@
 ﻿using System;
 namespace RobotvsDinos
 {
-	public class Dinos
+	public class Dinosaur
 	{
         //HAS A
         public string Name;
@@ -9,25 +9,25 @@ namespace RobotvsDinos
         public int AttackPower;
         
         //Constructor
-        public Dinos()
+        public Dinosaur()
         {
             this.Name = "Grimlock";
             this.Health = 100;
             this.AttackPower = 25;
         }
         //CAN DO
-        public void AttackRobot(Robots robots)
+        public void AttackRobot(Robot robot)
         {
             //attack Robot
             int damageDealt = this.AttackPower;
 
             //Reduce Robot Health
-            robots.Health -= damageDealt;
+            robot.Health -= damageDealt;
 
             //Check if health is less than or equal to zero
-            if (robots.Health <= 0)
+            if (robot.Health <= 0)
             {
-                robots.Health = 0;
+                robot.Health = 0;
             }
         }
     }

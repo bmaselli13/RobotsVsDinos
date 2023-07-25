@@ -6,16 +6,16 @@ namespace RobotvsDinos
     public class Battlefield
     {
         //Member Variables
-        Robots robots;
-        Dinos dinos;
-        Weapons weapons;
+        Robot robot;
+        Dinosaur dinosaur;
+        Weapon weapon;
 
         //Constructor
         public Battlefield()
         {
-            dinos = new Dinos();
-            robots = new Robots();
-            weapons = new Weapons();
+            dinosaur = new Dinosaur();
+            robot = new Robot();
+            weapon = new Weapon();
 
         }
 
@@ -32,13 +32,13 @@ namespace RobotvsDinos
         public void DisplayWinner()
 
         {
-            if (dinos.Health <= 0)
+            if (dinosaur.Health <= 0)
             {
-                Console.WriteLine($"{robots.Name} Wins!");
+                Console.WriteLine($"{robot.Name} Wins!");
             }
-            else if (robots.Health <= 0)
+            else if (robot.Health <= 0)
             {
-                Console.WriteLine($"{dinos.Name} Wins!");
+                Console.WriteLine($"{dinosaur.Name} Wins!");
             }
 
         }
@@ -62,23 +62,23 @@ namespace RobotvsDinos
             //Battle to conclude once either the Robot or the Dinosaur has its
             //health points reduced to zero.
 
-            while (dinos.Health > 0 && robots.Health > 0) 
+            while (dinosaur.Health > 0 && robot.Health > 0) 
             {
                 //Dino Attacks
-                dinos.AttackRobot(robots);
+                dinosaur.AttackRobot(robot);
 
                 //Display Dino name attacking Robot name
-                Console.WriteLine($"{dinos.Name} hits {robots.Name} for {dinos.AttackPower} damage\n");
-                Console.WriteLine($"{robots.Name} health is now at {robots.Health} points\n\n");
+                Console.WriteLine($"{dinosaur.Name} hits {robot.Name} for {dinosaur.AttackPower} damage\n");
+                Console.WriteLine($"{robot.Name} health is now at {robot.Health} points\n\n");
 
-                if (robots.Health > 0)
+                if (robot.Health > 0)
                 {
                     //Robot Attacks
-                    robots.AttackDino(dinos);
+                    robot.AttackDino(dinosaur);
 
                     //Display Robot name attacking Dino name
-                    Console.WriteLine($"{robots.Name} hits {dinos.Name} with {weapons.Name} for {weapons.WeaponPower} damage\n");
-                    Console.WriteLine($"{dinos.Name} health is now at {dinos.Health} points\n\n");
+                    Console.WriteLine($"{robot.Name} hits {dinosaur.Name} with {weapon.Name} for {weapon.WeaponPower} damage\n");
+                    Console.WriteLine($"{dinosaur.Name} health is now at {dinosaur.Health} points\n\n");
                 }              
 
             }            
